@@ -136,7 +136,7 @@
     "url": "^0.11.0",
     "varuint-bitcoin": "^1.1.2",
     "web-vitals": "^2.1.4",
-    "webpack": "^5.64.4",
+    "webpack": "^5.76.0",
     "webpack-dev-server": "^5.1.0",
     "webpack-manifest-plugin": "^4.0.2",
     "workbox-webpack-plugin": "^7.1.0",
