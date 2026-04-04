@@ -61,9 +61,8 @@ abstract class Message extends EventEmitter {
       } catch (e: any) {
         err = {
           message: e.message,
-          stack: e.stack
+          code: e.code
         };
-        e.code && (err.code = e.code);
         e.data && (err.data = e.data);
       }
 
