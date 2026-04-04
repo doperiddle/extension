@@ -41,6 +41,7 @@ import RunesTokenScreen from './Runes/RunesTokenScreen';
 import SendRunesScreen from './Runes/SendRunesScreen';
 import AddressTypeScreen from './Settings/AddressTypeScreen';
 import AdvancedScreen from './Settings/AdvancedScreen';
+import DonateScreen from './Settings/DonateScreen';
 import ChangePasswordScreen from './Settings/ChangePasswordScreen';
 import EditAccountNameScreen from './Settings/EditAccountNameScreen';
 import EditWalletNameScreen from './Settings/EditWalletNameScreen';
@@ -214,6 +215,10 @@ export const routes = {
   AddressTypeScreen: {
     path: '/settings/address-type',
     element: <AddressTypeScreen />
+  },
+  DonateScreen: {
+    path: '/settings/donate',
+    element: <DonateScreen />
   },
   EditAccountNameScreen: {
     path: '/settings/edit-account-name',

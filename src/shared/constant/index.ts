@@ -434,6 +434,8 @@ export const DISCORD_URL = 'https://discord.com/invite/EMskB2sMz8';
 export const TWITTER_URL = 'https://twitter.com/unisat_wallet';
 export const TELEGRAM_URL = 'https://t.me/UniSat_Official ';
 
+export const DONATION_ADDRESS = 'bc1q8wrcqd8lh9rkpk0v2rmqzvqqswm9ldz4z7ge6n';
+
 export const CHANNEL = process.env.channel!;
 export const VERSION = process.env.release!;
 export const MANIFEST_VERSION = process.env.manifest!;

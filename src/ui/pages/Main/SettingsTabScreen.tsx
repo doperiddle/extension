@@ -82,6 +82,14 @@ const SettingList: Setting[] = [
     right: true
   },
   {
+    label: 'Donate',
+    value: 'Support this project',
+    desc: '',
+    action: 'donate',
+    route: '/settings/donate',
+    right: true
+  },
+  {
     label: '',
     value: '',
     desc: 'Expand View ',
