@@ -94,6 +94,10 @@ browserRuntimeOnConnect((port) => {
 
   const pm = new PortMessage(port);
 
+  if (!port.sender) {
+    return;
+  }
+
   const sessionId = port.sender?.tab?.id;
   const session = sessionService.getOrCreateSession(sessionId);
 
