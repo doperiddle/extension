@@ -47,13 +47,21 @@ browserRuntimeOnConnect((port) => {
             eventBus.emit(data.method, data.params);
             break;
           case 'openapi':
-            if (walletController.openapi[data.method]) {
+            if (
+              data.method &&
+              Object.prototype.hasOwnProperty.call(walletController.openapi, data.method) &&
+              typeof walletController.openapi[data.method] === 'function'
+            ) {
               return walletController.openapi[data.method].apply(null, data.params);
             }
             break;
           case 'controller':
           default:
-            if (data.method) {
+            if (
+              data.method &&
+              Object.prototype.hasOwnProperty.call(walletController, data.method) &&
+              typeof walletController[data.method] === 'function'
+            ) {
               return walletController[data.method].apply(null, data.params);
             }
         }
@@ -85,12 +93,28 @@ browserRuntimeOnConnect((port) => {
   }
 
   const pm = new PortMessage(port);
+
+  if (!port.sender) {
+    return;
+  }
+
+  const sessionId = port.sender?.tab?.id;
+  const session = sessionService.getOrCreateSession(sessionId);
+
+  // Set the session origin from the trusted browser API (port.sender.url)
+  // rather than relying on the origin provided by the untrusted web page.
+  if (port.sender?.url) {
+    try {
+      session.origin = new URL(port.sender.url).origin;
+    } catch {
+      // Invalid URL; leave origin as empty string
+    }
+  }
+
   pm.listen(async (data) => {
     if (!appStoreLoaded) {
       // todo
     }
-    const sessionId = port.sender?.tab?.id;
-    const session = sessionService.getOrCreateSession(sessionId);
 
     const req = { data, session };
     // for background push to respective page

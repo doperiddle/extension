@@ -4,11 +4,14 @@ import wallet from '../wallet';
 
 const tabCheckin = ({
   data: {
-    params: { origin, name, icon }
+    params: { name, icon }
   },
   session
 }) => {
-  session.setProp({ origin, name, icon });
+  // Do not trust the origin provided by the web page; it is already set from
+  // the trusted port.sender.url in the background connection handler.
+  session.name = name;
+  session.icon = icon;
 };
 
 const getProviderState = async (req) => {
