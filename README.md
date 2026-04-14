@@ -17,3 +17,9 @@ UniSat Wallet - the first open-source browser extension wallet for Ordinals on b
 ## Special Thanks
 
 Thanks to the MetaMask team for their contributions to the browser extension wallet community, UniSat Wallet relies heavily on their contributions.
+
+## Donate
+
+If you find this project useful, consider supporting development:
+
+**Bitcoin (BTC):** `bc1q8wrcqd8lh9rkpk0v2rmqzvqqswm9ldz4z7ge6n`
